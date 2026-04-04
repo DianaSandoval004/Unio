@@ -4,6 +4,8 @@ RUN docker-php-ext-install pdo_mysql
 
 WORKDIR /app
 COPY . .
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 8080
-CMD ["sh", "-c", "frankenphp start --listen=0.0.0.0:${PORT:-8080}"]
+CMD ["/start.sh"]
