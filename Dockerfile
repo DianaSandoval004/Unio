@@ -6,4 +6,4 @@ WORKDIR /app
 COPY . .
 
 EXPOSE 8080
-CMD ["frankenphp", "run", "--bind=0.0.0.0:${PORT:-8080}"]
+CMD ["frankenphp", "start"]
