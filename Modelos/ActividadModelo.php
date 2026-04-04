@@ -1,5 +1,5 @@
 <?php
-require_once 'Config\config.php';
+require_once 'Config/config.php';
 
 class ActividadModelo {
     private $db;
