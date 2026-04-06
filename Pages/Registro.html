@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Unio | Registro</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                extend: {
+                    colors: {
+                    "on-primary-fixed-variant": "#2b0090",
+                    "on-tertiary-fixed": "#37001e",
+                    "on-primary-fixed": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#5a2af7",
+                    "on-tertiary": "#ffeff2",
+                    "inverse-on-surface": "#9c9d9d",
+                    "on-secondary-container": "#563098",
+                    "tertiary-container": "#ff8cbd",
+                    "on-secondary-fixed": "#431783",
+                    "primary-fixed": "#a292ff",
+                    "on-background": "#2d2f2f",
+                    "outline-variant": "#acadad",
+                    "inverse-surface": "#0c0f0f",
+                    "secondary-fixed-dim": "#d2b8ff",
+                    "primary-fixed-dim": "#9581ff",
+                    "on-primary": "#f6f0ff",
+                    "on-error": "#ffefef",
+                    "tertiary": "#9b3667",
+                    "on-surface": "#2d2f2f",
+                    "on-primary-container": "#220076",
+                    "surface-container-low": "#f0f1f1",
+                    "error-container": "#f74b6d",
+                    "error": "#b41340",
+                    "surface-variant": "#dbdddd",
+                    "error-dim": "#a70138",
+                    "surface-dim": "#d3d5d5",
+                    "secondary-container": "#ddc8ff",
+                    "on-secondary": "#f9efff",
+                    "background": "#f6f6f6",
+                    "primary": "#5a2af7",
+                    "on-tertiary-fixed-variant": "#6f1044",
+                    "primary-dim": "#4e0bec",
+                    "primary-container": "#a292ff",
+                    "secondary-fixed": "#ddc8ff",
+                    "surface-container-highest": "#dbdddd",
+                    "tertiary-dim": "#8c2a5b",
+                    "tertiary-fixed-dim": "#f27db0",
+                    "surface-container": "#e7e8e8",
+                    "outline": "#767777",
+                    "surface-container-high": "#e1e3e3",
+                    "tertiary-fixed": "#ff8cbd",
+                    "on-surface-variant": "#5a5c5c",
+                    "secondary-dim": "#5f39a1",
+                    "surface-bright": "#f6f6f6",
+                    "surface": "#f6f6f6",
+                    "on-tertiary-container": "#63033b",
+                    "inverse-primary": "#927dff",
+                    "on-error-container": "#510017",
+                    "secondary": "#6b46ae",
+                    "on-secondary-fixed-variant": "#603aa2"
+                    },
+                    fontFamily: {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+                },
+            }
+        </script>
+
+        <style>
+            body { font-family: 'Plus Jakarta Sans', sans-serif; }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .kinetic-gradient {
+                background: linear-gradient(135deg, #5a2af7 0%, #a292ff 100%);
+            }
+            .glass-panel {
+                background: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(20px);
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                filter: invert(0.5);
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body class="bg-background text-on-surface min-h-screen flex flex-col">
+        <!-- Auth Layout Wrapper -->
+        <main class="flex-grow flex items-center justify-center p-6 md:p-12 relative overflow-hidden">
+            <!-- Background Refraction Elements -->
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-tertiary/5 rounded-full blur-[100px]"></div>
+            <div class="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-2xl shadow-on-surface/5 rounded-3xl overflow-hidden bg-surface-container-lowest">
+                <!-- Left Side: Aesthetic/Branding (Hidden on mobile) -->
+                <div class="hidden lg:flex lg:col-span-5 kinetic-gradient p-12 flex-col justify-between relative overflow-hidden">
+                    <div class="relative z-10">
+                        <img alt="UNIO Logo" class="h-10 w-auto mb-8 brightness-0 invert mx-auto block" src="../Recursos/logo.png"/>
+                        <h2 class="text-white text-4xl font-extrabold tracking-tighter leading-tight">
+                            Únete a la nueva era de eventos.
+                        </h2>
+                        <p class="text-white/80 mt-6 text-lg font-light leading-relaxed">
+                            Gestiona, descubre y conecta en un solo lugar diseñado para la fluidez y la eficiencia.
+                        </p>
+                    </div>
+                    <!-- Decorative Prism Shape -->
+                    <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                </div>
+                <!-- Right Side: Registration Form -->
+                <div class="lg:col-span-7 p-8 md:p-12 lg:p-16">
+                    <!-- Mobile Logo -->
+                    <div class="lg:hidden flex justify-center mb-8">
+                        <img alt="UNIO Logo" class="h-8 w-auto" src="../Recursos/logo.png"/>
+                    </div>
+                    <div class="mb-10 text-center lg:text-left">
+                        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-2">
+                            Crea tu cuenta
+                        </h1>
+                    <p class="text-on-surface-variant text-lg">
+                        Completa los datos para comenzar tu experiencia.
+                    </p>
+                    </div>
+                    <form class="space-y-6">
+                        <!-- Name Cluster -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Nombre completo
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="Ej. Juan Ignacio" type="text"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Apodo
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="Cómo te llaman" type="text"/>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Apellido paterno
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="Apellido paterno" type="text"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Apellido materno
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="Apellido materno" type="text"/>
+                            </div>
+                        </div>
+                        <!-- Details Cluster -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Género
+                                </label>
+                                <div class="relative">
+                                    <select class="w-full appearance-none bg-none px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface pr-10 cursor-pointer">
+                                        <option disabled="" selected="" value="">
+                                            Seleccionar
+                                        </option>
+                                        <option>
+                                            Masculino
+                                        </option>
+                                        <option>
+                                            Femenino
+                                        </option>
+                                        <option>
+                                            No binario
+                                        </option>
+                                        <option>
+                                            Prefiero no decirlo
+                                        </option>
+                                    </select>
+                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">
+                                        <span class="material-symbols-outlined text-xl">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Teléfono
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="+52 288 000 00 00" type="tel"/>
+                            </div>
+                        </div>
+                        <!-- Fecha de nacimiento -->
+                        <div class="space-y-2">
+                                    Fecha de Nacimiento
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface" type="date"/>
+                        </div>                        
+                        <!-- Credentials Cluster -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                Correo electrónico
+                            </label>
+                            <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="tu@correo.com" type="email"/>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2 relative">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Contraseña
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="••••••••" type="password"/>
+                            </div>
+                            <div class="space-y-2 relative">
+                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">
+                                    Confirmación
+                                </label>
+                                <input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline/50" placeholder="••••••••" type="password"/>
+                            </div>
+                        </div>
+                        <!-- Checkboxes Section -->
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-3">
+                                <div class="flex items-center h-5">
+                                    <input class="w-5 h-5 rounded border-outline-variant bg-surface-container text-primary focus:ring-primary/20" id="terms" type="checkbox"/>
+                                </div>
+                                <label class="text-sm text-on-surface-variant leading-relaxed" for="terms">
+                                    Acepto los 
+                                        <a class="text-primary font-semibold hover:underline" href="../index.html">
+                                            términos de servicio
+                                        </a>
+                                    y la 
+                                        <a class="text-primary font-semibold hover:underline" href="../index.html">
+                                            política de privacidad
+                                        </a>.
+                                </label>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="flex items-center h-5">
+                                    <input class="w-5 h-5 rounded border-outline-variant bg-surface-container text-primary focus:ring-primary/20" id="location" type="checkbox"/>
+                                </div>
+                                <label class="text-sm text-on-surface-variant leading-relaxed" for="location">
+                                    Permitir acceso a mi ubicación actual.
+                                        <span class="block text-xs opacity-70 mt-0.5">
+                                            Esto es necesario para el correcto funcionamiento de la funcionalidad de mapas.
+                                        </span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Action Button -->
+                        <div class="pt-4">
+                            <a href="../Pages/EncuestaInicio.html"
+                            class="w-full block text-center kinetic-gradient text-white font-bold py-5 rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:scale-[1.01] transition-all active:scale-[0.98] text-lg">
+                                Crear cuenta
+                            </a>
+                        </div>
+                        <!-- Footer Link -->
+                        <div class="text-center pt-6">
+                            <p class="text-on-surface-variant font-medium">
+                                ¿Ya tienes una cuenta? 
+                                    <a class="text-primary font-bold hover:underline ml-1" href="../index.html">
+                                        Iniciar Sesión
+                                    </a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Shared Footer (Simplified for Auth Focus) -->
+        <footer class="w-full border-t border-outline-variant/10 py-6 px-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-lowest">
+            <div class="text-sm font-['Plus_Jakarta_Sans'] text-slate-500">
+                © 2026 UNIO - Conectando con la realidad. Todos los derechos reservados.
+            </div>
+            <div class="flex gap-6">
+                <a class="text-sm text-slate-500 hover:text-primary transition-colors" href="../index.html">
+                    Privacidad
+                </a>
+                <a class="text-sm text-slate-500 hover:text-primary transition-colors" href="../index.html">
+                    Términos
+                </a>
+                <a class="text-sm text-slate-500 hover:text-primary transition-colors" href="../index.html">
+                    Ayuda
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>

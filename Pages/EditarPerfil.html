@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Unio | Editar perfil</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "on-primary": "#f6f0ff",
+                  "primary-fixed-dim": "#9581ff",
+                  "outline-variant": "#acadad",
+                  "surface-container-highest": "#dbdddd",
+                  "on-surface": "#2d2f2f",
+                  "secondary-dim": "#5f39a1",
+                  "on-tertiary-fixed-variant": "#6f1044",
+                  "background": "#f6f6f6",
+                  "tertiary-container": "#ff8cbd",
+                  "tertiary": "#9b3667",
+                  "surface-container-lowest": "#ffffff",
+                  "inverse-primary": "#927dff",
+                  "surface": "#f6f6f6",
+                  "tertiary-fixed": "#ff8cbd",
+                  "secondary-container": "#ddc8ff",
+                  "on-tertiary": "#ffeff2",
+                  "primary": "#6236FF",
+                  "on-tertiary-fixed": "#37001e",
+                  "tertiary-fixed-dim": "#f27db0",
+                  "on-secondary-fixed": "#431783",
+                  "surface-dim": "#d3d5d5",
+                  "surface-bright": "#f6f6f6",
+                  "on-background": "#2d2f2f",
+                  "tertiary-dim": "#8c2a5b",
+                  "inverse-surface": "#0c0f0f",
+                  "on-primary-container": "#220076",
+                  "surface-tint": "#6236FF",
+                  "primary-container": "#a292ff",
+                  "on-surface-variant": "#5a5c5c",
+                  "on-primary-fixed-variant": "#2b0090",
+                  "secondary-fixed-dim": "#d2b8ff",
+                  "on-error": "#ffefef",
+                  "secondary-fixed": "#ddc8ff",
+                  "inverse-on-surface": "#9c9d9d",
+                  "on-secondary": "#f9efff",
+                  "on-primary-fixed": "#000000",
+                  "on-error-container": "#510017",
+                  "surface-container-low": "#f0f1f1",
+                  "surface-container": "#e7e8e8",
+                  "secondary": "#6b46ae",
+                  "surface-container-high": "#e1e3e3",
+                  "primary-fixed": "#a292ff",
+                  "on-tertiary-container": "#63033b",
+                  "primary-dim": "#4e0bec",
+                  "on-secondary-fixed-variant": "#603aa2",
+                  "outline": "#767777",
+                  "error-dim": "#a70138",
+                  "error": "#b41340",
+                  "surface-variant": "#dbdddd",
+                  "error-container": "#f74b6d",
+                  "on-secondary-container": "#563098"
+                },
+                fontFamily: {
+                  "headline": ["Plus Jakarta Sans"],
+                  "body": ["Plus Jakarta Sans"],
+                  "label": ["Plus Jakarta Sans"]
+                },
+                borderRadius: {"DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+              },
+            },
+          }
+    </script>
+    <style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+  </head>
+
+  <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Navbar with only Logo -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/10 px-4 md:px-8 py-4">
+      <div class="max-w-7xl mx-auto flex items-center">
+        <img alt="UNIO Logo" class="h-8 md:h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiSgBpCkSb6haruCTUz8zCgJIxItt-tJ63UHrAlg-Aw3Oh2ab6q-GWHOl_Ie_RqVQwlMOuI7n_S4N6o87HolUrEnNjsJ7eaD30217seFbp1j0lcfxbaia4MtHfbEHzMYySZdLuQa3i8TUZnShd9U2MDUzibCk3AWI9yKUScyhN5JPmVlzERCa1PPjqsDqxzN9bULfrBMooFr98lzx9bV0bl7oUNP_dFzHBPvRq8i5o4UjokX77PxeMK9BnPJQ4KHkI3edHQoUGQ"/>
+      </div>
+    </nav>
+    <!-- Top Navigation Bar -->
+    <main class="pt-24 pb-32 px-4 md:px-6 max-w-4xl mx-auto space-y-8">
+      <!-- Section: Información Básica (Sin correo, tel, pass) -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+            Información Básica
+          </h2>
+          <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">
+              edit
+            </span> 
+            Editar
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="space-y-2">
+            <label class="block text-on-surface-variant font-medium text-sm ml-1">
+              Nombre
+            </label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="Ej. María José"/>
+          </div>
+          <div class="space-y-2">
+            <label class="block text-on-surface-variant font-medium text-sm ml-1">
+              Apellido Paterno
+            </label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="Ej. Rodríguez"/>
+          </div>
+          <div class="space-y-2">
+            <label class="block text-on-surface-variant font-medium text-sm ml-1">
+              Apellido Materno
+            </label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="Ej. Santos"/>
+          </div>
+          <div class="space-y-2">
+            <label class="block text-on-surface-variant font-medium text-sm ml-1">
+              Fecha de nacimiento
+            </label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="date" value="2009-01-01"/>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloque independiente: Correo Electrónico -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+            Correo Electrónico
+          </h2>
+          <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">
+              edit
+            </span> 
+            Editar
+          </button>
+        </div>
+        <div class="space-y-2">
+          <label class="block text-on-surface-variant font-medium text-sm ml-1">
+            Dirección de correo
+          </label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="email" value="majoejemplo@hotmail.com"/>
+        </div>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloque independiente: Teléfono -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+            Teléfono
+          </h2>
+          <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">
+              edit
+            </span>
+            Editar
+          </button>
+        </div>
+        <div class="space-y-2">
+          <label class="block text-on-surface-variant font-medium text-sm ml-1">
+            Número de teléfono
+          </label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="tel" value="+52 288 000 00 00"/>
+        </div>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloque independiente: Contraseña -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+            Contraseña
+          </h2>
+          <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">
+              edit
+            </span> 
+            Editar
+          </button>
+        </div>
+        <div class="space-y-2">
+          <label class="block text-on-surface-variant font-medium text-sm ml-1">
+            Contraseña actual
+          </label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="password" value="********"/>
+        </div>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Section: Sobre Mí -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-4">
+            <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+              Sobre Mí
+            </h2>
+            <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+              <span class="material-symbols-outlined text-lg" data-icon="edit">
+                edit
+              </span>
+              Editar
+            </button>
+          </div>
+          <span class="text-[11px] font-bold text-outline uppercase tracking-widest">
+            0 / 300
+          </span>
+        </div>
+        <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all resize-none leading-relaxed" placeholder="Cuéntanos un poco sobre ti..." rows="4"></textarea>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Section: Mis Intereses -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="mb-6 flex items-center justify-between">
+          <div>
+            <div>
+              <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+              Mis Intereses
+              </h2>
+              
+            </div>
+            <p class="text-sm text-on-surface-variant mt-1">
+              Selecciona las categorías que definen tu estilo de vida.
+            </p>
+          </div>
+          <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">
+              edit
+            </span>
+            Editar
+          </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <button class="flex items-center gap-3 p-4 bg-primary text-on-primary rounded-xl shadow-md transition-all active:scale-95 group">
+            <span class="material-symbols-outlined" data-icon="palette">
+              palette
+            </span>
+            <span class="text-xs font-bold text-left">
+              Creativa y artística
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="self_improvement">
+              self_improvement
+            </span>
+            <span class="text-xs font-bold text-left">
+              Bienestar y relajación
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="forest">
+              forest
+            </span>
+            <span class="text-xs font-bold text-left">
+              Al aire libre y con la naturaleza
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-primary text-on-primary rounded-xl shadow-md transition-all active:scale-95 group">
+            <span class="material-symbols-outlined" data-icon="explore">
+              explore
+            </span>
+            <span class="text-xs font-bold text-left">
+              Turismo y exploración
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="restaurant">
+              restaurant
+            </span>
+            <span class="text-xs font-bold text-left">
+              Gastronómica
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="groups">
+              groups
+            </span>
+            <span class="text-xs font-bold text-left">
+              Social y comunitaria
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="fitness_center">
+              fitness_center
+            </span>
+            <span class="text-xs font-bold text-left">
+              Física y deportiva
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="movie">
+              movie
+            </span>
+            <span class="text-xs font-bold text-left">
+              Entretenimiento y ocio
+            </span>
+          </button>
+          <button class="flex items-center gap-3 p-4 bg-surface-container-lowest text-on-surface rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group border border-surface-container">
+            <span class="material-symbols-outlined text-primary" data-icon="menu_book">
+              menu_book
+            </span>
+            <span class="text-xs font-bold text-left">
+              Intelectual y cultural
+            </span>
+          </button>
+        </div>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Section: Dirección -->
+      <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+            Dirección
+          </h2>
+          <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">
+              edit
+            </span>
+            Editar
+          </button>
+        </div>
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="space-y-2">
+              <label class="block text-on-surface-variant font-medium text-sm ml-1">
+                País
+              </label>
+              <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="México"/>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-on-surface-variant font-medium text-sm ml-1">
+                Estado
+              </label>
+              <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="Veracruz"/>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-on-surface-variant font-medium text-sm ml-1">
+                Ciudad
+              </label>
+              <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="Tierra Blanca"/>
+            </div>
+          </div>
+          <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container shadow-inner">
+            <iframe class="w-full h-full border-0 opacity-80" src="https://www.openstreetmap.org/export/embed.html?bbox=-96.36%2C18.44%2C-96.34%2C18.46&layer=mapnik"></iframe>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-surface-container flex justify-end gap-3">
+          <button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-bold text-sm">
+            Cancelar
+          </button>
+          <button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm">
+            Actualizar
+          </button>
+        </div>
+      </section>
+
+      <!-- Final Actions -->
+      <section class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a href="Perfil.html" class="w-full sm:w-auto px-12 py-4 rounded-full bg-surface-container text-on-surface font-bold transition-all hover:bg-surface-container-high active:scale-95 text-center">
+          Volver al Perfil
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

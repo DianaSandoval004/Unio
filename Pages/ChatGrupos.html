@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Unio | Mis grupos</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+        
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                extend: {
+                    colors: {
+                    "outline": "#767777",
+                    "inverse-surface": "#0c0f0f",
+                    "primary-fixed-dim": "#9581ff",
+                    "on-secondary": "#f9efff",
+                    "tertiary-dim": "#8c2a5b",
+                    "on-secondary-container": "#563098",
+                    "on-error": "#ffefef",
+                    "on-secondary-fixed-variant": "#603aa2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#510017",
+                    "background": "#f6f6f6",
+                    "surface-tint": "#5a2af7",
+                    "surface-container-high": "#e1e3e3",
+                    "error-dim": "#a70138",
+                    "primary-fixed": "#a292ff",
+                    "outline-variant": "#acadad",
+                    "primary": "#5a2af7",
+                    "on-background": "#2d2f2f",
+                    "secondary-fixed": "#ddc8ff",
+                    "surface-container": "#e7e8e8",
+                    "on-surface-variant": "#5a5c5c",
+                    "on-tertiary": "#ffeff2",
+                    "error-container": "#f74b6d",
+                    "secondary-dim": "#5f39a1",
+                    "surface-bright": "#f6f6f6",
+                    "on-surface": "#2d2f2f",
+                    "primary-dim": "#4e0bec",
+                    "secondary-container": "#ddc8ff",
+                    "error": "#b41340",
+                    "secondary-fixed-dim": "#d2b8ff",
+                    "surface-variant": "#dbdddd",
+                    "on-primary-container": "#220076",
+                    "on-primary-fixed": "#000000",
+                    "on-tertiary-fixed": "#37001e",
+                    "on-primary-fixed-variant": "#2b0090",
+                    "on-tertiary-container": "#63033b",
+                    "secondary": "#6b46ae",
+                    "tertiary": "#9b3667",
+                    "on-tertiary-fixed-variant": "#6f1044",
+                    "surface-container-low": "#f0f1f1",
+                    "tertiary-fixed-dim": "#f27db0",
+                    "on-primary": "#f6f0ff",
+                    "inverse-on-surface": "#9c9d9d",
+                    "tertiary-container": "#ff8cbd",
+                    "tertiary-fixed": "#ff8cbd",
+                    "surface": "#f6f6f6",
+                    "on-secondary-fixed": "#431783",
+                    "inverse-primary": "#927dff",
+                    "surface-container-highest": "#dbdddd",
+                    "surface-dim": "#d3d5d5",
+                    "primary-container": "#a292ff"
+                    },
+                    fontFamily: {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+                },
+            }
+        </script>
+
+        <style>
+                body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f6f6f6; }
+                .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); }
+                .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+                ::-webkit-scrollbar { width: 4px; }
+                ::-webkit-scrollbar-track { background: transparent; }
+                ::-webkit-scrollbar-thumb { background: #e7e8e8; border-radius: 10px; }
+                
+                /* Sidebar transition styles */
+                #sidebar {
+                    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .sidebar-collapsed #sidebar {
+                    transform: translateX(-100%);
+                    margin-left: -20rem; /* Same as w-80 */
+                }
+                #toggle-handle {
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
+                .sidebar-collapsed #toggle-handle {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+        </style>
+    </head>
+
+    <body class="text-on-surface overflow-hidden">
+        <!-- TopNavBar Implementation -->
+        <header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(45,47,47,0.06)] h-16 px-8 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <img src="https://lh3.googleusercontent.com/aida/ADBb0uiSgBpCkSb6haruCTUz8zCgJIxItt-tJ63UHrAlg-Aw3Oh2ab6q-GWHOl_Ie_RqVQwlMOuI7n_S4N6o87HolUrEnNjsJ7eaD30217seFbp1j0lcfxbaia4MtHfbEHzMYySZdLuQa3i8TUZnShd9U2MDUzibCk3AWI9yKUScyhN5JPmVlzERCa1PPjqsDqxzN9bULfrBMooFr98lzx9bV0bl7oUNP_dFzHBPvRq8i5o4UjokX77PxeMK9BnPJQ4KHkI3edHQoUGQ" alt="UNIO Logo" class="h-8 md:h-10 w-auto object-contain"/>
+                <nav class="hidden md:flex gap-6">
+                    <a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-300 px-3 py-2 rounded-lg" href="../Pages/Mapa.html">
+                        Explorar
+                    </a>
+                    <a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-300 px-3 py-2 rounded-lg" href="../Pages/CrearActividad.html">
+                        Crear
+                    </a>
+                    <a class="p-2 rounded-full text-[#5a2af7] dark:text-[#a292ff] font-bold transition-transform active:scale-95 inline-block" href="../Pages/ChatGrupos.html">
+                        Mis grupos
+                    </a>
+                </nav>
+            </div>
+            <div class="relative group">
+                <button class="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                    <span id="username" class="text-sm font-medium">
+                        Usuario
+                    </span>
+                </button>
+                <div class="absolute right-0 top-full mt-2 w-56 bg-white/90 backdrop-blur-xl border border-outline-variant/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60] py-2">
+                    <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-on-surface hover:bg-primary/5 hover:text-primary transition-colors" href="../Pages/Perfil.html">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                        <span>
+                            Mi perfil
+                        </span>
+                    </a>
+                    <a href="../Pages/Notificaciones.html" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-on-surface hover:bg-primary/5 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                        <span>
+                            Notificaciones
+                        </span>
+                    </a>
+                    <a href="../Pages/Ajustes.html" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-on-surface hover:bg-primary/5 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">
+                            settings
+                        </span>
+                        <span>
+                            Ajustes
+                        </span>
+                    </a>
+                    <a onclick="logout()" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-red-500 hover:bg-red-100 hover:text-red-600 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-lg">
+                            logout
+                        </span>
+                        <span>
+                            Cerrar sesión
+                        </span>
+                    </a>
+                </div>
+            </div>     
+        </header>
+
+        <main class="flex h-screen pt-16 relative">
+            <!-- Sidebar Handle (Always visible or shows when sidebar is hidden) -->
+            <button class="fixed left-0 top-1/2 -translate-y-1/2 z-40 bg-white shadow-[2px_0_8px_rgba(0,0,0,0.05)] border border-l-0 border-surface-container-low rounded-r-xl py-6 px-1.5 hover:bg-surface-container-low transition-all group" id="toggle-handle" onclick="toggleSidebar()">
+                <span class="material-symbols-outlined text-primary-dim text-lg transition-transform group-hover:scale-110" id="handle-icon">
+                    chevron_left
+                </span>
+            </button>
+
+            <!-- Sidebar: Mensajes -->
+            <aside class="flex flex-col w-80 bg-[#f6f6f6] border-r border-surface-container-low p-6 space-y-6 overflow-y-auto relative z-30 flex-shrink-0" id="sidebar">
+                <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                    <h2 class="text-xl font-extrabold tracking-tight text-on-surface">
+                        Mis grupos
+                    </h2>
+                    <p class="text-sm text-on-surface-variant opacity-70">
+                        Grupos de tus eventos
+                    </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-sm" data-icon="search">
+                        search
+                    </span>
+                    <input class="w-full bg-surface-container-low border-none rounded-xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-outline-variant" placeholder="Buscar grupos..." type="text"/>
+                </div>
+
+                <div class="space-y-2">
+                    <!-- Active Group -->
+                    <button class="w-full flex items-center gap-3 p-3 bg-white text-[#5a2af7] font-bold rounded-xl shadow-sm transition-all duration-300 translate-x-1">
+                        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center overflow-hidden">
+                            <img class="w-full h-full object-cover" data-alt="Golden hour yoga session on a beach, silhouettes of people in tree pose, warm orange and purple sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA183u34LhFKYykQZ9DuSEQjPkZtL6ouj3A7WZxQfXDXakq5wjakraN4nS0hS2GbtUIuTfNjw0twdRkJhd7n5Fv7poeTrxf3kfZzrvgcja1xNzvYgvffnoDsJe5QfKYEA1XiVqt8cTlKt8-bbXy3f3pbmuiTP_m5ucjT8DVcRMApHLI_5NtSQc56PE-UOElhQ8TF3GbVBuAnvNUr9AuU_QqIxyRQx6pcMcbsbMK6xao55ZwbUoNgCdY9htq_MbSoQTv-v0SoGwW7w"/>
+                        </div>
+                        <div class="flex-1 text-left overflow-hidden">
+                            <p class="text-[15px] truncate">
+                                Sunset Yoga Crew
+                            </p>
+                            <p class="text-xs text-on-surface-variant font-normal opacity-70 truncate">
+                                Tú: ¡Nos vemos mañana!
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-[10px] text-primary/60">
+                                12:45
+                            </span>
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                    </button>
+
+                    <!-- Other Groups -->
+                    <button class="w-full flex items-center gap-3 p-3 text-[#2d2f2f] hover:bg-[#e7e8e8] rounded-xl transition-all duration-200">
+                        <div class="w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden">
+                            <img class="w-full h-full object-cover" data-alt="Aerial view of a community garden with vibrant vegetables and flowers, bright midday sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqU-nglhLlrahpLehRxXeTiMhHvzIP3AqFXRI76nvVs_EjzkttrpQq0qpoANdz35iIVx31hjtrPVNeXzuM771kvQzbWHL9aqj8cEYhGgF3_xKMoClmdz0Ky3-Qen9vpMxEW1tGk1B4WuDHtZww9ARvQGo_zoW4LX5v8F-xtcPPYOLNaZAuWvA6A7VWVJ2LttxyRkHLR-F8JUdvaD1vbssMk8DeOZcCsgXJQvwHxRVeQfejwg8vy2i1PQfDausDRi7siHaaugVBoA"/>
+                        </div>
+                        <div class="flex-1 text-left overflow-hidden">
+                            <p class="text-[15px] font-semibold truncate">
+                                Eco-Huerto Vecinal
+                            </p>
+                            <p class="text-xs text-on-surface-variant truncate">
+                                Carlos: ¿Alguien tiene palas?
+                            </p>
+                        </div>
+                        <span class="text-[10px] text-outline-variant">
+                            Ayer
+                        </span>
+                    </button>
+                    <button class="w-full flex items-center gap-3 p-3 text-[#2d2f2f] hover:bg-[#e7e8e8] rounded-xl transition-all duration-200">
+                        <div class="w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden">
+                            <img class="w-full h-full object-cover" data-alt="Microphone on a stand with colorful stage lighting in background, musical performance atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB6PfyN1f3ldqCOh30MFJ625wNueAp3nDgYVLGKX88jBJHAT57hl2sxgkhg_7kMT_90ZQ7Y1GsefY1-oAQTZLYwFIYUWoAxpaqpt1zhCX8CiZL8p0cRwVR8Q-A4POBPTIsuZddWDFanu1PaZ_0Bi4zUdIGqjMxdFYCEZo1IIfVG9fn1vpJC73B1qKD-qmHpl3zz2SfesTqeYAkJ5eKU53pQw9VkE6p1FVr0VcouTM0HaaBXAZnTyFWUo3g0_kj-McGrYo91GN5AQ"/>
+                        </div>
+                        <div class="flex-1 text-left overflow-hidden">
+                            <p class="text-[15px] font-semibold truncate">
+                                Open Mic Night
+                            </p>
+                            <p class="text-xs text-on-surface-variant truncate">
+                                Sofía envió una foto
+                            </p>
+                        </div>
+                        <span class="text-[10px] text-outline-variant">
+                            Mar
+                        </span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Chat Area -->
+            <section class="flex-1 flex flex-col bg-white overflow-hidden">
+                <!-- Chat Header -->
+                <header class="h-16 flex items-center justify-between px-6 border-b border-surface-container-low">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container">
+                            <img class="w-full h-full object-cover" data-alt="Yoga practitioner in a peaceful indoor studio, soft morning light, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCji_TZOko03JeYiqt7Gs9fd6-DDatgzihwpZK89WNeLQm2Rp8FK3Q5x3aLplvwMJ51ueJxWwfh9BaCHaDVLS_ml4tsVMBS5s3GMUeOTWG4Kyqv6bHTzyPSdBH6LxHCKQ7pAtbD3TSYuYfMXVSHfVb3td7Nt5f0w_whG1VXBv-qh_1PjoLoxvewCeMhU6LuNltxO6VHoaxvfmAIxmx3UOdEDry3wYKhnRoe1l9LzrijybucFZBI6Z99WZoG9IMHNq_X_bZFeSMPQg"/>
+                        </div>
+                        <div>
+                            <h1 class="text-base font-bold text-on-surface">
+                                Sunset Yoga Crew
+                            </h1>
+                            <p class="text-xs text-[#5a2af7] font-medium">
+                                12 participantes • Próxima sesión: Mañana
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low text-primary text-sm font-semibold rounded-full hover:bg-surface-container transition-colors">
+                            <span class="material-symbols-outlined text-sm" data-icon="info">
+                                info
+                            </span>
+                            Ver Evento
+                        </button>
+                        <button class="material-symbols-outlined text-outline-variant p-2 rounded-full hover:bg-surface-container" data-icon="more_vert">
+                            more_vert
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Messages Stream -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6 flex flex-col">
+                    <!-- System Message -->
+                    <div class="flex flex-col items-center gap-3 py-4">
+                        <div class="h-[1px] w-32 bg-surface-container"></div>
+                        <div class="bg-primary-container/20 text-primary-dim px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-wider">
+                            Siguiente Evento: Sábado 18:00h • Playa del Postiguet
+                        </div>
+                        <div class="h-[1px] w-32 bg-surface-container"></div>
+                    </div>
+                    <!-- Message Received -->
+                    <div class="flex items-start gap-3 max-w-[80%]">
+                        <div class="w-8 h-8 rounded-full bg-surface-container flex-shrink-0">
+                            <img alt="Avatar" data-alt="Portrait of a young woman with curly hair, natural soft lighting, smiling gently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA935s9nvACClkmosTih1jpnAfYDCanrcWxnDxrkuuMoEJ4mgNdXoncmy6EjVBemsGaAAiCa3PgwgFHp_edxL34m2exLvyq0uOXcY46R6MEoZNwErf_0hMh8sB7rwf3EIjSARkHb9XWsJDaoT9XRzheFSwPJtLQRyj-83atXFUmoM4GWOWbuhfq3PH2OH8tMZYfSU-UhjYNUL5gGp2H3ZOgF-7KbvVJ_zwDjuT8ot8YhcK5p66hFWLLt_yhcv6C7Ig2jLUGLDiaA"/>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-[11px] font-bold text-outline ml-1">
+                                Elena M.
+                            </p>
+                            <div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-none">
+                                <p class="text-sm leading-relaxed text-on-surface">¡Hola a todos! ¿Alguien tiene un mat extra que me pueda prestar para la sesión de mañana? El mío se rompió :(</p>
+                            </div>
+                            <span class="text-[10px] text-outline-variant ml-1">
+                                11:20
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Message Sent -->
+                    <div class="flex items-start gap-3 max-w-[80%] self-end flex-row-reverse">
+                        <div class="w-8 h-8 rounded-full bg-primary flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
+                            YO
+                        </div>
+                        <div class="space-y-1 flex flex-col items-end">
+                            <p class="text-[11px] font-bold text-primary mr-1">
+                                Tú
+                            </p>
+                            <div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none shadow-md shadow-primary/10">
+                                <p class="text-sm leading-relaxed">
+                                    ¡Claro Elena! Yo tengo uno de repuesto en el coche. Te lo llevo sin falta.
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-1 mr-1">
+                                <span class="text-[10px] text-outline-variant">
+                                    11:45
+                                </span>
+                                <span class="material-symbols-outlined text-[10px] text-primary" data-icon="done_all">
+                                    done_all
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Message Received -->
+                    <div class="flex items-start gap-3 max-w-[80%]">
+                        <div class="w-8 h-8 rounded-full bg-surface-container flex-shrink-0">
+                            <img alt="Avatar" data-alt="Portrait of a young woman with curly hair, natural soft lighting, smiling gently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xcd6vHVuEgwcMcewZ1ZfJ9ArqF1VxrroVq20QuyneEUNYlHGGRDrlpBcb6JiDhbY0yDkukEzuNoIbY9LCMYdmfALpYoQ649L0itGmIpJLeo31OEuaQS5cnffpg8VZ9xkCP2uwC20mF7DzsYCh1dCz0PjK-LEOZmHwwXDigUDbuGX_fvYuSusDrBodltb40jELnIHm-eds8YgCG1IBw21Joc93KmCyizBtbUUmOFK05AOAxPB0a2MCJVWPhsCFGHZKfiVY9yTVg"/>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-[11px] font-bold text-outline ml-1">
+                                Elena M.
+                            </p>
+                            <div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-none">
+                                <p class="text-sm leading-relaxed text-on-surface">
+                                    ¡Mil gracias! Eres un sol ☀️
+                                </p>
+                            </div>
+                            <span class="text-[10px] text-outline-variant ml-1">
+                                11:50
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <footer class="p-6 bg-white">
+                    <div class="max-w-4xl mx-auto flex items-end gap-3 bg-surface-container-low p-2 rounded-[1.5rem] focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+                        <button class="material-symbols-outlined text-outline p-2 rounded-full hover:bg-white transition-colors" data-icon="add">
+                            add
+                        </button>
+                        <textarea class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2 px-1 resize-none h-10 max-h-32 placeholder:text-outline-variant" placeholder="Escribe un mensaje..." rows="1"></textarea>
+                        <button class="material-symbols-outlined text-outline p-2 rounded-full hover:bg-white transition-colors" data-icon="mood">
+                            mood
+                        </button>
+                        <button class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                            <span class="material-symbols-outlined" data-icon="send">
+                                send
+                            </span>
+                        </button>
+                    </div>
+                </footer>
+            </section>
+        </main>
+
+        <!-- BottomNavBar for Mobile -->
+        <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 h-20 bg-white/70 backdrop-blur-xl border-t border-[#acadad]/20 shadow-[0_-8px_32px_rgba(45,47,47,0.06)] z-50 rounded-t-[1.5rem]">
+            <!-- Explorar -->
+            <a href="Mapa.html" class="flex flex-col items-center justify-center text-[#2d2f2f] opacity-60">
+                <span class="material-symbols-outlined">explore</span>
+                <span class="text-[10px] font-medium uppercase tracking-widest mt-1">
+                    Explorar
+                </span>
+            </a>
+            <!-- Crear -->
+            <a href="CrearActividad.html" class="flex flex-col items-center justify-center text-[#2d2f2f] opacity-60">
+                <span class="material-symbols-outlined">add_circle</span>
+                <span class="text-[10px] font-medium uppercase tracking-widest mt-1">
+                    Crear
+                </span>
+            </a>
+            <!-- Mis grupos -->
+            <a href="ChatGrupos.html" class="flex flex-col items-center justify-center bg-[#a292ff]/10 text-[#5a2af7] rounded-2xl px-4 py-1">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">
+                    chat
+                </span>
+                <span class="text-[10px] font-medium uppercase tracking-widest mt-1">
+                    Mis grupos
+                </span>
+            </a>
+        </nav>
+
+        <script>
+            function toggleSidebar() {
+                const body = document.body;
+                const icon = document.getElementById('handle-icon');
+                body.classList.toggle('sidebar-collapsed');
+                
+                if (body.classList.contains('sidebar-collapsed')) {
+                    icon.innerText = 'chevron_right';
+                } else {
+                    icon.innerText = 'chevron_left';
+                }
+            }
+        </script>
+
+    </body>
+</html>

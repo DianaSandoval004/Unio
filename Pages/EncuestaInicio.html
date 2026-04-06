@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Unio | Preferencias</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "outline": "#767777",
+                  "inverse-surface": "#0c0f0f",
+                  "primary-fixed-dim": "#9581ff",
+                  "on-secondary": "#f9efff",
+                  "tertiary-dim": "#8c2a5b",
+                  "on-secondary-container": "#563098",
+                  "on-error": "#ffefef",
+                  "on-secondary-fixed-variant": "#603aa2",
+                  "surface-container-lowest": "#ffffff",
+                  "on-error-container": "#510017",
+                  "background": "#f6f6f6",
+                  "surface-tint": "#5a2af7",
+                  "surface-container-high": "#e1e3e3",
+                  "error-dim": "#a70138",
+                  "primary-fixed": "#a292ff",
+                  "outline-variant": "#acadad",
+                  "primary": "#5a2af7",
+                  "on-background": "#2d2f2f",
+                  "secondary-fixed": "#ddc8ff",
+                  "surface-container": "#e7e8e8",
+                  "on-surface-variant": "#5a5c5c",
+                  "on-tertiary": "#ffeff2",
+                  "error-container": "#f74b6d",
+                  "secondary-dim": "#5f39a1",
+                  "surface-bright": "#f6f6f6",
+                  "on-surface": "#2d2f2f",
+                  "primary-dim": "#4e0bec",
+                  "secondary-container": "#ddc8ff",
+                  "error": "#b41340",
+                  "secondary-fixed-dim": "#d2b8ff",
+                  "surface-variant": "#dbdddd",
+                  "on-primary-container": "#220076",
+                  "on-primary-fixed": "#000000",
+                  "on-tertiary-fixed": "#37001e",
+                  "on-primary-fixed-variant": "#2b0090",
+                  "on-tertiary-container": "#63033b",
+                  "secondary": "#6b46ae",
+                  "tertiary": "#9b3667",
+                  "on-tertiary-fixed-variant": "#6f1044",
+                  "surface-container-low": "#f0f1f1",
+                  "tertiary-fixed-dim": "#f27db0",
+                  "on-primary": "#f6f0ff",
+                  "inverse-on-surface": "#9c9d9d",
+                  "tertiary-container": "#ff8cbd",
+                  "tertiary-fixed": "#ff8cbd",
+                  "surface": "#f6f6f6",
+                  "on-secondary-fixed": "#431783",
+                  "inverse-primary": "#927dff",
+                  "surface-container-highest": "#dbdddd",
+                  "surface-dim": "#d3d5d5",
+                  "primary-container": "#a292ff"
+                },
+                fontFamily: {
+                  "headline": ["Plus Jakarta Sans"],
+                  "body": ["Plus Jakarta Sans"],
+                  "label": ["Plus Jakarta Sans"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+              },
+            },
+          }
+    </script>
+
+    <style>
+          body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f6f6f6;
+          }
+          .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          }
+          .selected-card {
+            background: linear-gradient(135deg, #5a2af7 0%, #a292ff 100%);
+          }
+          .kinetic-shadow {
+            box-shadow: 0 8px 32px rgba(45, 47, 47, 0.06);
+          }
+    </style>
+  </head>
+
+  <body class="bg-background text-on-surface min-h-screen flex flex-col">
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12 md:py-16">
+      <!-- Header Section -->
+      <div class="max-w-4xl w-full mb-12 text-center">
+        <img src="https://lh3.googleusercontent.com/aida/ADBb0uiSgBpCkSb6haruCTUz8zCgJIxItt-tJ63UHrAlg-Aw3Oh2ab6q-GWHOl_Ie_RqVQwlMOuI7n_S4N6o87HolUrEnNjsJ7eaD30217seFbp1j0lcfxbaia4MtHfbEHzMYySZdLuQa3i8TUZnShd9U2MDUzibCk3AWI9yKUScyhN5JPmVlzERCa1PPjqsDqxzN9bULfrBMooFr98lzx9bV0bl7oUNP_dFzHBPvRq8i5o4UjokX77PxeMK9BnPJQ4KHkI3edHQoUGQ" alt="UNIO Logo" class="h-8 md:h-10 w-auto object-contain mx-auto""/>
+        </br>
+        </br>
+        <h1 class="text-[2.5rem] md:text-[3.5rem] font-extrabold tracking-tighter text-on-surface mb-4 leading-tight">
+          ¿Qué alimenta tu curiosidad?
+        </h1>
+        <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-medium opacity-80">
+          Selecciona al menos 3 intereses para personalizar tu experiencia en Unio y conectar con tu comunidad.
+        </p>
+      </div>
+
+      <!-- Bento Grid of Interests -->
+      <div class="max-w-5xl w-full grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <!-- Creativa y artística -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px] border-2 border-transparent focus:border-primary">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="palette">
+            palette
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Expresión
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Creativa y artística
+            </h3>
+          </div>
+        </button>
+
+        <!-- Bienestar y relajación -->
+        <button class="group relative overflow-hidden selected-card rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow border-none">
+          <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <span class="material-symbols-outlined text-white text-3xl mb-auto" data-icon="self_improvement" style="font-variation-settings: 'FILL' 1;">
+            self_improvement
+          </span>
+          <div>
+            <span class="text-white/80 text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Salud
+            </span>
+            <h3 class="text-white text-xl font-bold leading-tight">
+              Bienestar y relajación
+            </h3>
+          </div>
+          <div class="absolute top-4 right-4 bg-white rounded-full p-1">
+            <span class="material-symbols-outlined text-primary text-sm" data-icon="check">
+              check
+            </span>
+          </div>
+        </button>
+
+        <!-- Al aire libre y con la naturaleza -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="forest">
+            forest
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Entorno
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Al aire libre y con la naturaleza
+            </h3>
+          </div>
+        </button>
+
+        <!-- Turismo y exploración -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="explore">
+            explore
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Aventura
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Turismo y exploración
+            </h3>
+          </div>
+        </button>
+        
+        <!-- Gastronómica -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="restaurant">
+            restaurant
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Sabor
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Gastronómica
+            </h3>
+          </div>
+        </button>
+
+        <!-- Social y comunitaria -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="groups">
+            groups
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Conexión
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Social y comunitaria
+            </h3>
+          </div>
+        </button>
+
+        <!-- Física y deportiva -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="sports_soccer">
+            sports_soccer
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Acción
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Física y deportiva
+            </h3>
+          </div>
+        </button>
+
+        <!-- Entretenimiento y ocio -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="theater_comedy">
+            theater_comedy
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Diversión
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Entretenimiento y ocio
+            </h3>
+          </div>
+        </button>
+
+        <!-- Intelectual y cultura -->
+        <button class="group relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start text-left aspect-square md:aspect-[4/3] transition-all duration-300 kinetic-shadow hover:translate-y-[-4px]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-auto" data-icon="menu_book">
+            menu_book
+          </span>
+          <div>
+            <span class="text-on-surface-variant text-[0.75rem] font-bold uppercase tracking-widest mb-1 block">
+              Saber
+            </span>
+            <h3 class="text-on-surface text-xl font-bold leading-tight">
+              Intelectual y cultura
+            </h3>
+          </div>
+        </button>
+      </div>
+
+      <!-- Action Section -->
+      <div class="mt-16 w-full max-w-5xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex items-center gap-4">
+          <div class="flex -space-x-2">
+            <img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="portrait of a young smiling professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6-s8IzzedHQht0f29-cNMdtbRNhzHSLSCYIozMGR58cSKMzisThlKPvw-27nEVJEOH4Tv1AAHiLuOF0GGES7OBG1wuokyOriaE8oYQxxyovzjOXOffCKLcyvzXUhbcNmNvRCFYgTpkLsncZlCrpdPoYI0F97rIRmMGXr33bU5SJ48Gt-NpCRoIzMG3fJzECC_jWSuLPaLrRXaLBoTMCMW3pZ5viyMKav9VJmhsUMG1GIn95_uq7q_IcURvKHvtkpgmLJ9FL3WMw"/>
+            <img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="smiling young man with beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_n3GPEIbn61UU1KoffQ2kkVaqGCornafdT5L4Jp8VKzthFTi6g43iIY3RccirbdeDDJDcXYEaCSsYjHDxCRbdNR8VIvdm7hkPAIwk8UVaBdg_IIQfheUy5RIvDHYs_lxiH-Ewkt5fJVaDrTulj3KLkm4s18IyZX9WTw0b3g2ip80r-lSpUvi1-kPMJdwIT-5-DLC4gOPd5w9DdChp6DTXthFUgzqqBqPvuerRP1sdCVxeljbiltD-2z7R733uadqkntW77SerYA"/>
+            <div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary-container">
+              +12k
+            </div>
+          </div>
+          <p class="text-sm font-medium text-on-surface-variant">Únete a otros con tus mismos intereses</p>
+        </div>
+        <button class="w-full md:w-auto px-12 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-lg rounded-xl shadow-[0_8px_24px_-4px_rgba(90,42,247,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+          <a href="../Pages/Mapa.html">
+            Continuar
+          </a>
+        </button>
+      </div>
+    </main>
+    
+    <!-- Visual Accent Element -->
+    <div class="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-tertiary opacity-20"></div>
+  </body>
+</html>
