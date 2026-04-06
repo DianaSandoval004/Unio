@@ -1,2 +1,2 @@
 #!/bin/sh
-frankenphp start --listen=0.0.0.0:${PORT:-8080}
+PORT=${PORT:-8080} frankenphp start
